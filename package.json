@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "npm run dev",
-    "dev": "vite --config web.vite.config.ts",
+    "dev": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 vite --config web.vite.config.ts",
     "buildmap": "tsc && vite build --config buildmap.vite.config.ts",
     "upload": "npm run buildmap && upload-wa-map",
     "upload-only": "upload-wa-map"
@@ -17,6 +17,7 @@
     "@types/node": "^20.0.0",
     "@workadventure/iframe-api-typings": "^1.26.10",
     "@workadventure/upload-maps": "^1.7.4",
+    "cross-env": "^10",
     "dotenv": "^16.3.1",
     "express": "^5.2.1",
     "typescript": "^5.9.2",
